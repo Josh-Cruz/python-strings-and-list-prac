@@ -67,4 +67,5 @@ x.sort()
 y = x[:len(x)/2]
 x[0] = y
 print x
-print y
+
+
