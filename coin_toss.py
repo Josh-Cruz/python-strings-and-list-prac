@@ -26,7 +26,7 @@ def coin_toss():
         print "This is Flip number", x, "Flipping Now..."
         random_num = random.random()
         r_num = random_num * 100
-        if r_num % 2 != 0:
+        if int(r_num) % 2 != 0:
            heads +=1
            print "It's Heads!", "Got", heads, " Head(s)so far and", tails, "Tail(s) so far."
            x+=1 
