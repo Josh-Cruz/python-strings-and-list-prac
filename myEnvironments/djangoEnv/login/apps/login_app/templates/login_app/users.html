@@ -1,0 +1,24 @@
+<table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+        <tr>
+          <td><a href="/users/{{user.id}}/edit">{{ user.first_name }}, {{ user.last_name }} </a></td>
+          <td>{{ user.email }}</td>
+          <td>
+            <a href="/users/{{ user.id }}/edit" class="button">Edit User</a>
+            <form action="/users/{{ user.id }}/delete" method="post">
+              {% csrf_token %}
+              <input type="submit" value="Delete User">
+            </form>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
